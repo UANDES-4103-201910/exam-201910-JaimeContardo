@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<div class="product-index-grid pt4">
+  <% @products.each do |product| %>
+      <div class="product border-light">
+
+        <div class="pa3">
+
+          <h3 class="fw7 f4 title"><%= link_to product.title, product %></h3>
+          <h3 class="fw7 f4 title"><%= link_to product.brand, product %></h3>
+          <h3 class="fw7 f4 title"><%= link_to product.model, product %></h3>
+          <h3 class="fw7 f4 title"><%= link_to product.type, product %></h3>
+          <h3 class="fw7 f4 title"><%= link_to product.variant, product %></h3>
+          <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(product.price) %></p>
+          <p class="has-text-gray fg pt1"><%= product.short_description %></p>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+<br>
